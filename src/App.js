@@ -2,6 +2,15 @@ import React from 'react'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 
+class SearchBar extends React.Component {
+  render() {
+    return (
+      <form>
+        <input type="text" placeholder="Search by author or title" />
+      </form>
+    );
+  }
+}
 class BooksApp extends React.Component {
   state = {
     /**
@@ -17,7 +26,8 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
         {this.state.showSearchPage ? (
-          <div className="search-books">
+          <div>
+          <SearchBar />
             <div className="search-books-bar">
               <button className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</button>
               <div className="search-books-input-wrapper">
@@ -185,7 +195,7 @@ class BooksApp extends React.Component {
                             </div>
                           </div>
                           <div className="book-title">The Adventures of Tom Sawyer</div>
-                          <div className="book-authors">Mark Twain</div>
+                          <div className="book-authors">Mark Taiwan</div>
                         </div>
                       </li>
                     </ol>
